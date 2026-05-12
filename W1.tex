@@ -1,0 +1,130 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath, amssymb}
+
+\title{\textbf{Week 1 Writing Assignment (CS-EE5841)}\\Data Preprocessing and Perceptron}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\noindent \textbf{Total Points: 42}
+
+\vspace{0.3cm}
+
+\noindent \textbf{Instructions:} Complete all \textbf{Tasks} for each question (Q1-Q3). Show all key steps using formulas and provide brief interpretation where needed.
+
+%--------------------------------------------------
+\section*{Q1. Z-Score Outlier Detection (15 pts)}
+
+\subsection*{Question}
+
+Given dataset:
+\[
+X = \{5, 3, 7, 8, 100\}
+\]
+
+Mean: $\mu = 5.6$, Standard deviation: $\sigma = 3.7$
+
+\textbf{Tasks}
+\begin{itemize}
+    \item Compute the Z-score for $X = 100$
+    \item Determine whether $100$ is an outlier
+\end{itemize}
+
+\subsection*{Hint}
+
+\[
+Z = \frac{X - \mu}{\sigma}
+\]
+
+\subsection*{Solution}
+
+--- Write solutions for all tasks here \\
+
+\textbf{Interpretation:} ..write some text here...
+
+%--------------------------------------------------
+\section*{Q2. Min-Max Normalization (12 pts)}
+
+\subsection*{Question}
+
+Given dataset:
+\[
+X = [10, 15, 20, 25, 30]
+\]
+
+\textbf{Tasks}
+\begin{itemize}
+    \item Apply Min-Max normalization to the dataset
+    \item Compute normalized value for $X = 20$
+\end{itemize}
+
+\subsection*{Hint}
+
+\[
+X_{norm} = \frac{X - X_{min}}{X_{max} - X_{min}}
+\]
+
+\subsection*{Solution}
+
+--- Write solutions for all tasks here \\
+
+\textbf{Interpretation:} ...write some text here...
+
+%--------------------------------------------------
+\section*{Q3. Perceptron Weight Update (15 pts)}
+
+\subsection*{Question}
+
+Given:
+
+\[
+x = [2, 1], \quad y = 1
+\]
+
+Initial weights:
+\[
+w = [0.5, -0.5], \quad b = 0
+\]
+
+Learning rate:
+\[
+\eta = 0.1
+\]
+
+Activation:
+\[
+\hat{y} = \text{step}(w \cdot x + b)
+\]
+
+\textbf{Tasks}
+\begin{itemize}
+    \item Compute predicted output $\hat{y}$
+    \item Compute error
+    \item Update weights and bias
+\end{itemize}
+
+\subsection*{Hint}
+
+\[
+\text{Error} = y - \hat{y}
+\]
+
+\[
+w_{new} = w + \eta \cdot \text{error} \cdot x
+\]
+
+\[
+b_{new} = b + \eta \cdot \text{error}
+\]
+
+\subsection*{Solution}
+
+--- Write solutions for all tasks here \\
+
+\textbf{Interpretation:} ...write some text here...
+
+\end{document}
