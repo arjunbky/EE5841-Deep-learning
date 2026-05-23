@@ -1,0 +1,183 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath, amssymb}
+
+\title{\textbf{Week 3 Writing Assignment (CS-EE5841)}\\Convolutional Neural Networks and Advanced CNN Architectures}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\noindent \textbf{Total Points: 50}
+
+\vspace{0.3cm}
+
+\noindent \textbf{Instructions:} Show all key steps using formulas. Provide brief interpretation where needed.
+
+%--------------------------------------------------
+\section*{Q1. Convolution Output Size and Parameter Count (12 pts)}
+
+\subsection*{Question}
+
+An input image has size:
+\[
+32 \times 32 \times 3
+\]
+
+A convolutional layer uses:
+\[
+16 \text{ filters}, \quad 5 \times 5 \text{ kernel}, \quad S=1, \quad P=2
+\]
+
+Compute:
+\begin{itemize}
+    \item Output spatial dimension
+    \item Output volume size
+    \item Number of trainable parameters
+\end{itemize}
+
+\subsection*{Hint}
+
+\[
+O=\frac{I-F+2P}{S}+1
+\]
+
+\[
+\text{Parameters}=(F_hF_wC_{in}+1)C_{out}
+\]
+
+\subsection*{Solution}
+
+--- Write solutions for all tasks here 
+
+\noindent \textbf{Interpretation:} ... also write brief interpretation.
+
+%--------------------------------------------------
+\section*{Q2. Receptive Field Calculation in a CNN (10 pts)}
+
+\subsection*{Question}
+
+Consider a CNN with three convolutional layers. Each layer uses:
+\[
+3 \times 3 \text{ kernels}, \quad S=1, \quad P=1
+\]
+
+Compute the receptive field size after each convolutional layer.
+
+\subsection*{Hint}
+
+For stride 1 convolution:
+
+\[
+R_l=R_{l-1}+(K_l-1)
+\]
+
+where:
+\[
+R_0=1
+\]
+
+\subsection*{Solution}
+
+--- Write solutions for all tasks here 
+
+\noindent \textbf{Interpretation:} ... also write brief interpretation.
+
+%--------------------------------------------------
+\section*{Q3. Max Pooling and Feature Map Reduction (8 pts)}
+
+\subsection*{Question}
+
+Given the feature map:
+
+\[
+X=
+\begin{bmatrix}
+1 & 3 & 2 & 4\\
+5 & 6 & 1 & 2\\
+7 & 2 & 8 & 3\\
+4 & 1 & 5 & 9
+\end{bmatrix}
+\]
+
+Apply \(2 \times 2\) max pooling with stride \(S=2\).
+
+\subsection*{Solution}
+
+--- Write solutions for all tasks here 
+
+\noindent \textbf{Interpretation:} ... also write brief interpretation.
+
+%--------------------------------------------------
+\section*{Q4. Residual Learning in ResNet (10 pts)}
+
+\subsection*{Question}
+
+A residual block computes:
+
+\[
+y=F(x)+x
+\]
+
+Suppose:
+
+\[
+x=
+\begin{bmatrix}
+1\\
+-2\\
+3
+\end{bmatrix},
+\quad
+F(x)=
+\begin{bmatrix}
+0.5\\
+1.0\\
+-1.5
+\end{bmatrix}
+\]
+
+Compute the residual block output \(y\). Then briefly explain why this formulation helps train very deep CNNs.
+
+\subsection*{Solution}
+
+--- Write solutions for all tasks here 
+
+\noindent \textbf{Interpretation:} ... also write brief interpretation.
+
+%--------------------------------------------------
+\section*{Q5. U-Net Skip Connections and DenseNet Feature Reuse (10 pts)}
+
+\subsection*{Question}
+
+Answer the following conceptual-mathematical questions.
+
+\begin{enumerate}
+    \item In U-Net, suppose the decoder feature map has 128 channels and the corresponding encoder skip feature map has 128 channels. If they are concatenated, how many channels enter the next convolutional block?
+    \item In DenseNet, suppose a dense block starts with 64 channels and has growth rate \(k=32\). After 4 dense layers, how many channels are available?
+\end{enumerate}
+
+\subsection*{Hint}
+
+For concatenation:
+
+\[
+C_{out}=C_1+C_2
+\]
+
+For DenseNet:
+
+\[
+C_L=C_0+kL
+\]
+
+\subsection*{Solution}
+
+--- Write solutions for all tasks here 
+
+\noindent \textbf{Interpretation:} ... also write brief interpretation.
+
+\end{document}

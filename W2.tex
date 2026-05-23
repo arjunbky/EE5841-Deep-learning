@@ -1,0 +1,220 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath, amssymb}
+
+\title{\textbf{Week 2 Writing Assignment (CS-EE5841)}\\Deep Neural Networks and Optimization}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\noindent \textbf{Total Points: 66}
+
+\vspace{0.3cm}
+
+\noindent \textbf{Instructions:} Complete all \textbf{Tasks} for each question (Q1--Q5) below. Show all key steps using appropriate formulas, and provide a brief interpretation where required.
+
+%--------------------------------------------------
+\section*{Q1. Forward and Backward Pass (15 pts)}
+
+\subsection*{Question}
+
+Given:
+\[
+x=[1,-2], \quad y=1
+\]
+
+\[
+W^{(1)}=
+\begin{bmatrix}
+0.5 & -0.3\\
+0.2 & 0.8
+\end{bmatrix},
+\quad
+W^{(2)}=[1.0,-1.5]
+\]
+
+Activation: ReLU
+
+Loss:
+\[
+L=\frac{1}{2}(\hat{y}-y)^2
+\]
+
+\textbf{Tasks:}
+\begin{itemize}
+    \item Hidden layer output
+    \item Prediction $\hat{y}$
+    \item Loss $L$
+    \item Gradient $\frac{\partial L}{\partial W^{(1)}}$
+\end{itemize}
+
+\subsection*{Hint}
+
+\[
+z^{(1)}=W^{(1)}x, \quad a^{(1)}=\text{ReLU}(z^{(1)})
+\]
+
+\[
+\delta^{(2)}=\hat{y}-y
+\]
+
+\[
+\delta^{(1)}=(W^{(2)})^T\delta^{(2)}\odot \text{ReLU}'(z^{(1)})
+\]
+
+\subsection*{Solution}
+
+--- Write solutions for all tasks here 
+
+%--------------------------------------------------
+\section*{Q2. Softmax and Cross-Entropy (12 pts)}
+
+\subsection*{Question}
+
+Given:
+\[
+z=[2.0,1.0,0.1], \quad y=[1,0,0]
+\]
+
+\textbf{Tasks:}
+\begin{itemize}
+    \item Softmax probabilities
+    \item Gradient $\frac{\partial L}{\partial z}$
+\end{itemize}
+
+\subsection*{Hint}
+
+\[
+\hat{y}_i=\frac{e^{z_i}}{\sum_j e^{z_j}},
+\quad
+\nabla_z L=\hat{y}-y
+\]
+
+\subsection*{Solution}
+
+--- Write solutions for all tasks here 
+
+First compute exponentials:
+
+%--------------------------------------------------
+\section*{Q3. Vanishing Gradient (12 pts)}
+
+\subsection*{Question}
+
+A network has:
+\begin{itemize}
+    \item 10 layers
+    \item Each layer derivative $\approx 0.2$
+    \item Initial gradient $=1$
+\end{itemize}
+
+\textbf{Tasks:} Compute the gradient reaching the first layer.
+
+\subsection*{Hint}
+
+\[
+g=g_0\times(d)^L
+\]
+
+\subsection*{Solution}
+
+--- Write solutions for all tasks here \\
+
+\noindent \textbf{Interpretation:} ... also write interpretation
+
+%--------------------------------------------------
+\section*{Q4. L2 Regularization Update (15 pts)}
+
+\subsection*{Question}
+
+Given:
+\[
+W=
+\begin{bmatrix}
+0.8 & -0.4\\
+1.2 & 0.6
+\end{bmatrix},
+\quad
+\nabla L=
+\begin{bmatrix}
+0.3 & -0.2\\
+0.1 & 0.4
+\end{bmatrix}
+\]
+
+\[
+\eta=0.01,\quad \lambda=0.05
+\]
+
+\textbf{Tasks:} Compute updated weights $W_{new}$.
+
+\subsection*{Hint}
+
+\[
+W_{new}=W-\eta(\nabla L+2\lambda W)
+\]
+
+\subsection*{Solution}
+
+--- Write solutions for all tasks here \\
+
+First compute the regularization term:
+
+%--------------------------------------------------
+\section*{Q5. Adam Optimization (12 pts)}
+
+\subsection*{Question}
+
+Given:
+\[
+\theta_0=1.5,\quad g_1=0.8,\quad g_2=0.4
+\]
+
+\[
+\eta=0.001,\quad \beta_1=0.9,\quad \beta_2=0.999
+\]
+
+Assume:
+\[
+m_0=0,\quad v_0=0,\quad \epsilon=10^{-8}
+\]
+
+\textbf{Tasks:} Compute $\theta_1$ after first iteration.
+
+\subsection*{Hint}
+
+\[
+m_t=\beta_1m_{t-1}+(1-\beta_1)g_t
+\]
+
+\[
+v_t=\beta_2v_{t-1}+(1-\beta_2)g_t^2
+\]
+
+\[
+\hat{m}_t=\frac{m_t}{1-\beta_1^t},
+\quad
+\hat{v}_t=\frac{v_t}{1-\beta_2^t}
+\]
+
+\[
+\theta_t=\theta_{t-1}
+-
+\frac{\eta\hat{m}_t}{\sqrt{\hat{v}_t}+\epsilon}
+\]
+
+\subsection*{Solution}
+
+--- Write solutions for all tasks here\\
+
+
+Final answer:
+\[
+\boxed{\theta_1\approx?}
+\]
+
+\end{document}
