@@ -1,0 +1,245 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath, amssymb}
+
+\title{\textbf{Week 4 Writing Assignment (CS-EE5841)}\\Transfer Learning, Recurrent Neural Networks, LSTM/GRU, and Encoder--Decoder Models}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\noindent \textbf{Total Points: 50}
+
+\vspace{0.3cm}
+
+\noindent \textbf{Instructions:} Show all key steps using formulas. Provide brief interpretation where needed.
+
+%--------------------------------------------------
+\section*{Q1. Transfer Learning and Fine-Tuning Parameter Count (12 pts)}
+
+\subsection*{Question}
+
+A pre-trained CNN is used for a new image classification task. The convolutional base is frozen and only the new classifier head is trained.
+
+The frozen feature extractor outputs a feature vector of size:
+
+\[
+d = 4096
+\]
+
+The original model was trained for 1000 classes, but the new target task has:
+
+\[
+C = 10
+\]
+
+A new fully connected classification layer is added.
+
+Compute:
+\begin{itemize}
+    \item The number of trainable weights
+    \item The number of trainable bias parameters
+    \item The total number of trainable parameters
+\end{itemize}
+
+\subsection*{Hint}
+
+For a fully connected layer:
+
+\[
+\text{Parameters} = dC + C
+\]
+
+\subsection*{Solution}
+
+--- Write solutions for all tasks here 
+
+\noindent \textbf{Interpretation:} ... also write brief interpretation.
+
+%--------------------------------------------------
+\section*{Q2. Vanilla RNN Hidden State Computation (10 pts)}
+
+\subsection*{Question}
+
+Consider a simple RNN with scalar input and scalar hidden state:
+
+\[
+h_t = \tanh(W_hh_{t-1} + W_xx_t + b)
+\]
+
+Given:
+
+\[
+W_h = 0.5, \quad W_x = 1.0, \quad b = 0
+\]
+
+\[
+h_0 = 0
+\]
+
+and the input sequence:
+
+\[
+x_1 = 1, \quad x_2 = 2, \quad x_3 = -1
+\]
+
+Compute:
+
+\[
+h_1, \quad h_2, \quad h_3
+\]
+
+Use approximate values:
+
+\[
+\tanh(1) \approx 0.762, \quad \tanh(2.381) \approx 0.983, \quad \tanh(-0.509) \approx -0.469
+\]
+
+\subsection*{Solution}
+
+--- Write solutions for all tasks here 
+
+\noindent \textbf{Interpretation:} ... also write brief interpretation.
+
+%--------------------------------------------------
+\section*{Q3. LSTM Cell State Update (10 pts)}
+
+\subsection*{Question}
+
+An LSTM updates its cell state using:
+
+\[
+C_t = f_t C_{t-1} + i_t \widetilde{C}_t
+\]
+
+Suppose:
+
+\[
+C_{t-1} =
+\begin{bmatrix}
+2\\
+-1\\
+0.5
+\end{bmatrix},
+\quad
+f_t =
+\begin{bmatrix}
+0.8\\
+0.2\\
+0.6
+\end{bmatrix},
+\quad
+i_t =
+\begin{bmatrix}
+0.5\\
+0.7\\
+0.4
+\end{bmatrix},
+\quad
+\widetilde{C}_t =
+\begin{bmatrix}
+1\\
+-2\\
+0.25
+\end{bmatrix}
+\]
+
+Compute the new cell state \(C_t\).
+
+\subsection*{Solution}
+
+--- Write solutions for all tasks here 
+
+\noindent \textbf{Interpretation:} ... also write brief interpretation.
+
+%--------------------------------------------------
+\section*{Q4. GRU Update Gate and Hidden State Interpolation (8 pts)}
+
+\subsection*{Question}
+
+A GRU updates its hidden state using:
+
+\[
+h_t = (1-z_t)h_{t-1} + z_t \widetilde{h}_t
+\]
+
+Suppose:
+
+\[
+h_{t-1} =
+\begin{bmatrix}
+1\\
+-2
+\end{bmatrix},
+\quad
+\widetilde{h}_t =
+\begin{bmatrix}
+3\\
+0
+\end{bmatrix},
+\quad
+z_t =
+\begin{bmatrix}
+0.25\\
+0.75
+\end{bmatrix}
+\]
+
+Compute the new hidden state \(h_t\).
+
+\subsection*{Solution}
+
+--- Write solutions for all tasks here 
+
+\noindent \textbf{Interpretation:} ... also write brief interpretation.
+
+%--------------------------------------------------
+\section*{Q5. Encoder--Decoder Probability and Sequence Loss (10 pts)}
+
+\subsection*{Question}
+
+In an RNN encoder--decoder model, the decoder generates a target sequence word by word. The probability of the full output sequence is factorized as:
+
+\[
+P(y_1, y_2, \dots, y_T \mid x) =
+\prod_{t=1}^{T} P(y_t \mid y_{<t}, c)
+\]
+
+Suppose the correct target sentence has three words, and the decoder assigns the following probabilities to the correct words:
+
+\[
+P(y_1 \mid c) = 0.8
+\]
+
+\[
+P(y_2 \mid y_1,c) = 0.6
+\]
+
+\[
+P(y_3 \mid y_1,y_2,c) = 0.5
+\]
+
+Compute:
+\begin{itemize}
+    \item The probability of the complete target sequence
+    \item The negative log-likelihood loss
+\end{itemize}
+
+Use natural logarithm values:
+
+\[
+\ln(0.8) \approx -0.223,\quad
+\ln(0.6) \approx -0.511,\quad
+\ln(0.5) \approx -0.693
+\]
+
+\subsection*{Solution}
+
+--- Write solutions for all tasks here 
+
+\noindent \textbf{Interpretation:} ... also write brief interpretation.
+
+\end{document}
